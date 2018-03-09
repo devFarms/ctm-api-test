@@ -26,14 +26,14 @@ axios.get(nbaTeams)
         console.log("\n");
         console.log("Eastern Conference, Atlantic Division")
         console.log("-----------------------------------------")
-        for (e = 0; e < response.data.conferences[0].divisions[1].teams.length; e++){
-            console.log(response.data.conferences[0].divisions[1].teams[e].name + ', ID: ' + response.data.conferences[0].divisions[1].teams[e].id);
+        for (f = 0; f < response.data.conferences[0].divisions[1].teams.length; f++){
+            console.log(response.data.conferences[0].divisions[1].teams[f].name + ', ID: ' + response.data.conferences[0].divisions[1].teams[f].id);
             }
         console.log("\n");
         console.log("Eastern Conference, Central Division")
         console.log("-----------------------------------------")
-        for (e = 0; e < response.data.conferences[0].divisions[2].teams.length; e++){
-            console.log(response.data.conferences[0].divisions[2].teams[e].name + ', ID: ' + response.data.conferences[0].divisions[2].teams[e].id);
+        for (g = 0; g < response.data.conferences[0].divisions[2].teams.length; g++){
+            console.log(response.data.conferences[0].divisions[2].teams[g].name + ', ID: ' + response.data.conferences[0].divisions[2].teams[g].id);
             }
         console.log("\n");
         console.log("Western Conference, Northwest Division")
