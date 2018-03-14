@@ -14,10 +14,9 @@ var whatYear = d.getFullYear();
 var app = express();
 
 // List the games happening on a specified day
+var nbaTeams = 'https://api.sportradar.us/nba/trial/v4/en/league/hierarchy.json?api_key=' + nbaKey;
 
-function nbaTeamsRequest(){
-    var nbaTeams = 'https://api.sportradar.us/nba/trial/v4/en/league/hierarchy.json?api_key=g25ry7vx8nyrw8rhag4ua3sn';
-    return axios.get(nbaTeams)
+axios.get(nbaTeams)
     .then(function(response){
         console.log("Eastern Conference, Southeast Division")
         console.log("-----------------------------------------")
@@ -60,12 +59,10 @@ function nbaTeamsRequest(){
         console.log('***---------------------*** NBA Teams')
         console.log(error);
     });
-}
 
 
-function nbaGamesRequest(){
-    var nbaGames = 'https://api.sportradar.us/nba/trial/v4/en/games/2018/03/08/schedule.json?api_key=g25ry7vx8nyrw8rhag4ua3sn';
-    return axios.get(nbaGames)
+
+axios.get(nbaGames)
     .then(function(response){
         console.log("Today's NBA games.");
         // console.log('line 66 ---- ' + response.data.games);
@@ -80,13 +77,6 @@ function nbaGamesRequest(){
         console.log('***---------------------*** NBA Games')
         console.log(error);
     });
-}
-
-nbaGamesRequest();
-
-setTimeout(function(){
-    nbaTeamsRequest();
-},750)
 
 // List the games happening on a specified day
 // var tennisGames = 'https://api.sportradar.com/tennis-t2/en/schedules/' + whatYear + '-03-07/schedule.json?api_key=' + tennisKey;
@@ -105,8 +95,8 @@ setTimeout(function(){
 //         console.log(error);
 //     });
 
-console.log(d.getMonth() + 1);
-console.log(d.getDate());
+// console.log(d.getMonth() + 1);
+// console.log(d.getDate());
 
 // Set the app to listen on port 3000
 app.set("port", (process.env.PORT || 3000));
